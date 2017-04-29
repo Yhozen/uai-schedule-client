@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const URL = 'https://secure-oasis-54052.herokuapp.com/'
+const URL = 'https://uai-schedule-server.herokuapp.com'
 
 class App extends React.Component {
   constructor () {
@@ -33,7 +33,7 @@ class App extends React.Component {
       <div>
       <nav>
          <div className="nav-wrapper">
-           <a href="#" className="brand-logo">Logo</a>
+           <a href="#" className="brand-logo">Logoo</a>
            <ul id="nav-mobile" className="right hide-on-med-and-down">
              <li><a href="sass.html">Sass</a></li>
              <li><a href="badges.html">Components</a></li>
