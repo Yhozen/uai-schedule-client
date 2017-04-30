@@ -5,7 +5,7 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 function doCompile {
-  cp lib/ out/ && npm run compile && cp build/ out/
+  npm install && cp lib/ out/ && npm run compile && cp build/ out/
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
