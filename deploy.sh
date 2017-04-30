@@ -21,7 +21,7 @@ git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 shopt -s extglob
-rm -rf !(.git) || exit 0
+rm -rf !(.git|deploy_key.enc) || exit 0
 cd ..
 
 # Run our compile script
