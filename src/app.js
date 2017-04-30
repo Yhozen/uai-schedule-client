@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import '../lib/styles/own.css'
 
 const URL = 'https://uai-schedule-server.herokuapp.com'
 const weekday = [ "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" ]
@@ -44,23 +45,23 @@ class App extends React.Component {
          </div>
        </nav>
         <div className='container' >
-        <div className="row">
-              <div className="card-panel">
-                    <table className="bordered responsive-table highlight">
-                      <thead>
-                        <tr>
-                            <th>Hora</th>
-                            <th>Clase</th>
-                            <th>Sala</th>
-                        </tr>
-                      </thead>
+          <div className="row">
+                <div className="card-panel">
+                      <table className="bordered highlight">
+                        <thead>
+                          <tr>
+                              <th>Hora</th>
+                              <th>Clase</th>
+                              <th>Sala</th>
+                          </tr>
+                        </thead>
 
-                      <tbody>
-                      {this.state.clases.map(this.renderRows)}
-                      </tbody>
-                    </table>
-              </div>
-          </div>
+                        <tbody>
+                        {this.state.clases.map(this.renderRows)}
+                        </tbody>
+                      </table>
+                </div>
+            </div>
         </div>
       </div>
     )
