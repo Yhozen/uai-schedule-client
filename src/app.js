@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor () {
    super()
    this.state = {
-     clases: [ ['24:01', 'Por ahora no hay más', '420-A'] ]
+     clases: [ ['24:01', 'Cargando', '420-A'] ]
    }
  }
  componentDidMount() {
@@ -16,7 +16,7 @@ class App extends React.Component {
   fetchData() {
     fetch(URL)
       .then(res => res.json())
-      .then((clases) => this.setState({ clases }))
+      .then(setClase.bind(this))
       .catch(console.error)
   }
   renderRows (clase, i) {
@@ -57,9 +57,6 @@ class App extends React.Component {
                       {this.state.clases.map(this.renderRows)}
                       </tbody>
                     </table>
-                <span className="white-text">I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                </span>
               </div>
           </div>
         </div>
@@ -68,4 +65,12 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'))
+
+function setClase (clases) {
+  if (!clases[0]) {
+    this.setState({ clases: [ ['24:01', 'Por ahora no hay más', '420-A'] ] })
+  } else {
+    this.setState({ clases })
+  }
+}
