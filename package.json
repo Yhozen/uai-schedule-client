@@ -10,7 +10,11 @@
     "dev": "babel-watch src/main.js",
     "make": "cp -R lib/ out/lib/ && npm run compile && cp -R build/ out/build/ && cp index.html out/"
   },
-  "devDependencies": {
+  "author": "Garox",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "babel-core": "^6.24.0",
     "babel-loader": "^7.0.0",
     "babel-preset-babili": "0.0.12",
@@ -19,13 +23,6 @@
     "babel-watch": "^2.0.6",
     "css-loader": "^0.28.0",
     "style-loader": "^0.16.1",
-    "webpack": "^2.4.1"
-  },
-  "author": "Garox",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
     "webpack": "^2.4.1"
   }
 }
