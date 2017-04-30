@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 const URL = 'https://uai-schedule-server.herokuapp.com'
+const weekday = [ "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" ]
+const nDay  = new Date().getDay()
 
 class App extends React.Component {
   constructor () {
@@ -11,10 +13,10 @@ class App extends React.Component {
    }
  }
  componentDidMount() {
-   this.fetchData()
+   this.fetchData(URL)
  }
-  fetchData() {
-    fetch(URL)
+  fetchData(url) {
+    fetch(url)
       .then(res => res.json())
       .then(setClase.bind(this))
       .catch(console.error)
@@ -33,7 +35,7 @@ class App extends React.Component {
       <div>
       <nav>
          <div className="nav-wrapper">
-           <a href="#" className="brand-logo">Logoo</a>
+           <a href="#" className="brand-logo">{weekday[nDay]}</a>
            <ul id="nav-mobile" className="right hide-on-med-and-down">
              <li><a href="sass.html">Sass</a></li>
              <li><a href="badges.html">Components</a></li>
