@@ -7,7 +7,8 @@
     "babel": "babel -d build/ src/",
     "compile": "./node_modules/webpack/bin/webpack.js -p",
     "start": "node build/main",
-    "dev": "babel-watch src/main.js"
+    "dev": "babel-watch src/main.js",
+    "make": "cp -R lib/ out/lib/ && npm run compile && cp -R build/ out/build/ && cp index.html out/"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -24,6 +25,7 @@
   "license": "ISC",
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "webpack": "^2.4.1"
   }
 }
