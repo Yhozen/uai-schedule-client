@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- stable
+
+script: bash ./deploy.sh
+env:
+  global:
+  - ENCRYPTION_LABEL: 900a48dc8597
+  - COMMIT_AUTHOR_EMAIL: gabriel@garox.org
