@@ -8,7 +8,7 @@
     "compile": "./node_modules/webpack/bin/webpack.js -p",
     "start": "node build/main",
     "dev": "babel-watch src/main.js",
-    "make": "cp -R lib/ out/lib/ && cp -R build/ out/build/ && rm deploy* package.json  webpack.config.js  yarn.lock"
+    "make": "cp -R lib/ out/lib/ && cp -R build/ out/build/ && cd out/ && rm deploy* package.json  webpack.config.js  yarn.lock && cd .."
   },
   "author": "Garox",
   "license": "ISC",

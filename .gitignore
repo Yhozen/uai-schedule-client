@@ -1,6 +1,5 @@
 node_modules/
 yarn-error*
-build/
 .DS_Store
 deploy_key
 deploy_key.pub
