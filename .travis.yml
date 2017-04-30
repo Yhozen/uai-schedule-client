@@ -5,5 +5,5 @@ node_js:
 script: bash ./deploy.sh
 env:
   global:
-  - ENCRYPTION_LABEL: 6185d106d0c5
+  - ENCRYPTION_LABEL: 900a48dc8597
   - COMMIT_AUTHOR_EMAIL: gabriel@garox.org
