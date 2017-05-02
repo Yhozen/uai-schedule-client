@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import '../lib/styles/own.css'
 
-const URL = 'https://uai-schedule-server.herokuapp.com'
+const URL = 'https://uai-schedule-server.herokuapp.com/'
 const weekday = [ "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" ]
 const nDay  = new Date().getDay()
 
@@ -10,18 +10,20 @@ class App extends React.Component {
   constructor () {
    super()
    this.state = {
-     clases: [ ['24:01', 'Cargando', '420-A'] ]
+     clases: [ ['24:01', 'Cargando', '420-A'] ],
+     params: {
+       finalizado: '',
+       adelanto: ''
+     }
    }
  }
  componentDidMount() {
-   this.fetchData(URL)
+   let { finalizado, adelanto } = this.state.params
+   fetch(`${URL}?finalizado=${finalizado}&adelanto=${adelanto}`)
+     .then(res => res.json())
+     .then(setClase.bind(this))
+     .catch(console.error)
  }
-  fetchData(url) {
-    fetch(url)
-      .then(res => res.json())
-      .then(setClase.bind(this))
-      .catch(console.error)
-  }
   renderRows (clase, i) {
     return (
       <tr key={i}>
@@ -36,7 +38,11 @@ class App extends React.Component {
       <div>
       <nav>
          <div className="nav-wrapper">
-           <a href="#" className="brand-logo">{weekday[nDay]}</a>
+         <a onClick={() => this.setState({adelanto: -1})} className="brand-logo">
+         <i className="large material-icons">keyboard_arrow_left</i>
+         </a>
+         <a href="#" className="brand-logo">{weekday[nDay]}</a>
+         <a onClick={() => this.setState({adelanto: 1})} className="brand-logo">{weekday[(nDay-1)%7]}</a>
          </div>
        </nav>
         <div className='container' >
